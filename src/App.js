@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React , { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { Navigate } from "react-router";
+
+import UserContext from "./contextos/UserContext";
+
+import Home from "./paginas/Home/Home";
+import Login from "./paginas/Login/Login";
+import Carrito from "./paginas/Carrito/Carrito";
+import CheckOut from "./paginas/CheckOut/CheckOut";
+
 import './App.css';
 
-function App() {
+const App = () => {
+  const {userInfo} = useContext(UserContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={(userInfo ? <Home /> : <Navigate to="/login" />)} />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/cart" element={ <Carrito /> } />
+        <Route path="/checkout" element={ <CheckOut /> } />
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

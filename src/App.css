@@ -1,38 +1,112 @@
+header {
+  position: relative;
+}
+
 .App {
+  height: 100vh;
+  background-color: #fff;
+}
+
+.card-producto .img-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-producto .img-container img {
+  max-height: 175px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-producto code.precio {
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-producto .add-product-bubble {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  background-color: green;
+  padding: 15px;
+  border-radius: 10%;
+  box-shadow: 2px 5px 10px rgb(0,0,0,.5);
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+.card-producto:hover .add-product-bubble {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card-producto .add-product-bubble .fa-cart-plus {
+  font-size: 1.5rem;
   color: white;
+  background-color: green;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.card-resumen {
+  width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-repos {
+  min-height: 250px;
+}
+
+.avatar-img {
+  height: 200px;
+  border-radius: 50%;
+}
+
+.bg-light-blue {
+  background-color: lightblue;
+}
+
+.bg-mediumvioletred {
+  background-color: mediumvioletred;
+}
+
+.adicional-font-size {
+  font-size: 3rem;
+}
+
+.informacion-adicional {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repos {
+  background-color: mediumvioletred;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.followers {
+  background-color: lightblue;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-seguidor {
+  height: 150px;
+  border-radius: 50%;
+}
+
+.img-seguidor:hover {
+  cursor: pointer;
+}
+
+.error-icon-container {
+ border-radius: 50%;
+}
+
+.error-icon-container i {
+  font-size: 20rem;
+  color: red;
 }

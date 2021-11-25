@@ -68,3 +68,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Vistas:
+    Home: 
+        - Debe mostrar un listado de al menos 5 productos
+            - Cada producto debe tener su propio boton de agregar al carrito
+    Carrito de compras:
+        - Debe mostrar un listado de los productos que el usuario agrego
+            - Cada producto debe tener su propio boton de remover del carrito
+    Checkout:
+        - Mostrar un resumen de lo que se va a comprar
+
+Componentes:
+    Header:
+        - Debe mostrar la navegacion y un indicador del carrito de compras que muestre cuantos productos
+
+Hooks:
+    - useContext
+    - useReducer
+
+Productos:
+    - tomate
+        - id: 1
+        - img: https://media.istockphoto.com/photos/tomato-picture-id174930196?b=1&k=20&m=174930196&s=170667a&w=0&h=7Ayjl-bZSpI4vwYq5DvZhARmOhw1IiMzhdyjOswlhIs=
+    - lechuga
+        - id: 2
+        - img: https://media.istockphoto.com/photos/butterhead-lettuce-picture-id537304934?b=1&k=20&m=537304934&s=170667a&w=0&h=MGmZXerLO71LRxs1_WP5PZuKE4B4BD_FbguhYQAVkz4=
+    - cebolla
+        - id: 3
+        - img: https://media.istockphoto.com/photos/onion-picture-id183817051?b=1&k=20&m=183817051&s=170667a&w=0&h=b97_LJWLibQHgFs30xyUMfkq2dszVHoh1MHmue-I-ys=
+    - chicharos
+        - id: 4
+        - img: https://media.istockphoto.com/photos/green-pea-picture-id155431404?b=1&k=20&m=155431404&s=170667a&w=0&h=qbEbKkUdRLaoWCg-KOA1Ji9ikXWlK99YjEEjA2jf9rU=
+    - zanahorias
+        - id: 5
+        - img: https://media.istockphoto.com/photos/carrots-picture-id471359531?b=1&k=20&m=471359531&s=170667a&w=0&h=IqUxtzTtVnKyj0PhtePg6G0c4Z4qRT5Prsk9flpgeFM=

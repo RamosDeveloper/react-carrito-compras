@@ -2,14 +2,13 @@ import { useContext } from "react";
 
 import CartContext from './../contextos/CartContext';
 
+import { setItemAdd } from './../actions/cartActionCreators';
+
 const Producto = ({producto}) => {
     const {dispatchCart} = useContext(CartContext);
 
     const addProductToCart = (producto) => {
-        dispatchCart({
-            type: 'Item/Add',
-            payload: producto
-        });
+        dispatchCart(setItemAdd(producto));
     }
 
     return (

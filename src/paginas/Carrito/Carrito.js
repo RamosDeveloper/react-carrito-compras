@@ -25,7 +25,7 @@ const Carrito = () => {
             <div className="container my-4">
                 <div className="row">
                     <div className="col-12">
-                        <h3 className>Productos en tu carro</h3>
+                        <h3>Productos en tu carro</h3>
                     </div>
                 </div>                
                 <div className="row">

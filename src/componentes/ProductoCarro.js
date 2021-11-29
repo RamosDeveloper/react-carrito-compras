@@ -2,14 +2,13 @@ import { useContext } from "react";
 
 import CartContext from "../contextos/CartContext";
 
+import { setItemRemove } from './../actions/cartActionCreators';
+
 const ProductoCarro = ({producto}) => {
     const {dispatchCart} = useContext(CartContext);
 
     const RemoveProductToCart = (producto) => {
-        dispatchCart({
-            type: 'Item/Remove',
-            payload: producto
-        });
+        dispatchCart(setItemRemove(producto));
     }
 
     return (
@@ -20,7 +19,7 @@ const ProductoCarro = ({producto}) => {
                 <span className="cantidad">{producto.cantidad}</span>
                 <code className="precio">${producto.precio}</code>
                 <button className="btn btn-danger" onClick={() => {RemoveProductToCart(producto)}}>
-                    <i class="fas fa-trash-alt"></i>
+                    <i className="fas fa-trash-alt"></i>
                 </button>
             </div>            
         </div>

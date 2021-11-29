@@ -1,50 +1,19 @@
 import React , { createContext, useReducer } from 'react';
+import cartReducer from '../reducers/cartReducer';
 
 // 1. Crear el contexto
 const CartContext = createContext();
 
-// 2. Reducer e initialState
+// 2. initialState
 const initialState = {
-    items: []
-};
-
-const reducer = (state, action) => {
-    
-    switch(action.type) {
-        case 'Item/Add':
-            if(state.items.find(p => p.id === action.payload.id)) {
-                return {
-                    ...state,
-                    items: state.items.map(p => p.id === action.payload.id ? ({
-                        ...p,
-                        cantidad: p.cantidad + 1  
-                      }) : p)               
-                };
-            }
-
-            return {
-                ...state,
-                items: state.items.concat({
-                    ...action.payload,
-                    cantidad: 1                    
-                })
-            }
-        
-        case 'Item/Remove':
-            return {
-                ...state,
-                items: state.items.filter(p => p.id !== action.payload.id)
-            }
-
-        default:
-            return state;    
-    }
-    
+    items: [],
+    cantidad: 0,
+    total: 0
 };
 
 // 3. Provider
 const CartProvider = ({ children }) => {
-    const [cartInfo, dispatchCart] = useReducer(reducer, initialState);
+    const [cartInfo, dispatchCart] = useReducer(cartReducer, initialState);
 
     const pasamelabebe = {
         cartInfo,

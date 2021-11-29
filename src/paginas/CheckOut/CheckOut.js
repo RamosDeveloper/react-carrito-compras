@@ -9,17 +9,9 @@ import './CheckOut.css';
 
 const CheckOut = () => {
     const {cartInfo} = useContext(CartContext);
-    const {items} = cartInfo;
-    let cantidadPedido = 0;
-    let totalPedido = 0;
+    const {items, cantidad, total} = cartInfo;
 
     if(items.length === 0) return <Navigate to="/" />
-
-    cantidadPedido = items.map(producto => producto.cantidad).reduce((valorAnterior,valorSiguiente) => valorAnterior + valorSiguiente);
-    totalPedido = items.map(producto => producto.cantidad * producto.precio).reduce((valorAnterior,valorSiguiente) => valorAnterior + valorSiguiente);
-
-    
-    console.log({cantidadPedido,totalPedido});
 
     return (
         <div className="view-checkout">
@@ -30,7 +22,7 @@ const CheckOut = () => {
             </div>
             <div className="row my-4">
                 <div className="col-12">
-                    <h3 className>Detalle de su pedido</h3>
+                    <h3>Detalle de su pedido</h3>
                 </div>
                 <div className="col-12">
                     <table className="table table-striped table-hover table-dark">
@@ -62,8 +54,8 @@ const CheckOut = () => {
                         <tfoot>
                             <tr>
                                 <td colSpan="4">Totales</td>
-                                <td className="text-right">{cantidadPedido}</td>
-                                <td className="text-right">${totalPedido}</td>
+                                <td className="text-right">{cantidad}</td>
+                                <td className="text-right">${total}</td>
                             </tr>
                         </tfoot>
                     </table>                    

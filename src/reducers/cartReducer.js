@@ -4,8 +4,6 @@ const cartReducer = (state, action) => {
     
     switch(action.type) {
         case cartTypes.itemAdd:
-            console.log({state,action},"itemAdd");
-
             if(state.items.find(p => p.id === action.payload.id)) {
                 return {
                     ...state,
@@ -29,8 +27,6 @@ const cartReducer = (state, action) => {
             }
         
         case cartTypes.itemRemove:
-            console.log({state,action},"itemRemove");
-
             return {
                 ...state,
                 items: state.items.filter(p => p.id !== action.payload.id),
